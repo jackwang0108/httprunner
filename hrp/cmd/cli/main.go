@@ -2,6 +2,7 @@ package main
 
 import (
 	"os"
+	"testing"
 	"time"
 
 	"github.com/getsentry/sentry-go"
@@ -20,6 +21,8 @@ func main() {
 			panic(err)
 		}
 	}()
+
+	testing.Init()
 
 	exitCode := cmd.Execute()
 	os.Exit(exitCode)
